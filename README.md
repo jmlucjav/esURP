@@ -3,7 +3,7 @@
 Description
 ---------------
 
-This is implemented as a Solr UpdateRequestProcessor (URP) that redirects docs to ES. It is thoroughly explained [in this blog post](https://medium.com/@jmlucjav).
+This is implemented as a Solr UpdateRequestProcessor (URP) that redirects docs to ES. It is thoroughly explained [in this blog post](https://medium.com/@jmlucjav/using-solr-s-dataimporthandler-and-updaterequestprocessor-in-elasticsearch-2-0-596eb6e3a483).
 
 Using this, you should be able to configure your current Solr instance so it points to an ES instance and:
 
