@@ -72,7 +72,7 @@ Limitations
 ----------------
 
 - the ES mappings needed (for Nested types etc) are configured when a full delete is done from Solr. This was handy cause DIH sends a full delete when reindexing. If you are not using DIH, you can still send a full delete just so the mappings are set, or configure ES index beforehand the same way esURP does.
-- for _delete_ operations, just by _id_ or *:* are supported.
+- for _delete_ operations, just by _id_ or \*:\* are supported.
 - after you do the indexing to ES, if you still want to query Solr, it might be better to put the original jars in place, or some component might fail, for instance the ExpandComponent fails in my setup (due to the newer hppc jar from ES).
 - Important: ES must be using the same Lucene version Solr is using.
 
