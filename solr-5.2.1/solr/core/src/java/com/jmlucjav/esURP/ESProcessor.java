@@ -119,13 +119,7 @@ public class ESProcessor {
                     } else {
                         //multivalue
                         Collection<Object> c = sf.getValues();
-                        lx.startArray("attributes");
-                        for (Object o : c) {
-                            lx.startObject();
-                            lx.field(fname, o);
-                            lx.endObject();
-                        }
-                        lx.endArray();
+                        lx.field(fname, c);
                     }
                 }
             }
