@@ -20,18 +20,18 @@ Usage
 **On Solr side**:
 
 - add the following (or corresponding, if you are using a diff version than ES2.0) jars from ES to solr\server\solr-webapp\webapp\WEB-INF\lib\:
-    elasticsearch-2.0.0-beta1-SNAPSHOT.jar
-    jackson-core-2.5.3.jar
-    jackson-dataformat-yaml-2.5.3.jar
-    jsr166e-1.1.0.jar
-    guava-18.0.jar
-    hppc-0.7.1.jar
-    netty-3.10.3.Final.jar
-    jna-4.1.0.jar
-    compress-lzf-1.0.2.jar
+    - elasticsearch-2.0.0-beta1-SNAPSHOT.jar
+    - jackson-core-2.5.3.jar
+    - jackson-dataformat-yaml-2.5.3.jar
+    - jsr166e-1.1.0.jar
+    - guava-18.0.jar
+    - hppc-0.7.1.jar
+    - netty-3.10.3.Final.jar
+    - jna-4.1.0.jar
+    - compress-lzf-1.0.2.jar
 - removed the original jars from Solr that are superseeded by those just copied, in my case:
-    guava-14.0.1.jar
-    hppc-0.5.2.jar
+    - guava-14.0.1.jar
+    - hppc-0.5.2.jar
 - also add EsUpdateRequestProcessorFactory classes to Solr. I run them from my IDE, but you can create a jar too and put it with the ones above
 - configure solrconfig.xml so the chain that handled the docs you want to index in ES are processed by EsUpdateRequestProcessorFactory, for example with this configuration, we would be able to index into ES using DIH:
 
@@ -72,7 +72,7 @@ Limitations
 ----------------
 
 - the ES mappings needed (for Nested types etc) are configured when a full delete is done from Solr. This was handy cause DIH sends a full delete when reindexing. If you are not using DIH, you can still send a full delete just so the mappings are set, or configure ES index beforehand the same way esURP does.
-- for _delete_ operations, just by _id_ or *:* are supported.
+- for _delete_ operations, just by _id_ or \*:\* are supported.
 - after you do the indexing to ES, if you still want to query Solr, it might be better to put the original jars in place, or some component might fail, for instance the ExpandComponent fails in my setup (due to the newer hppc jar from ES).
 - Important: ES must be using the same Lucene version Solr is using.
 
