@@ -20,7 +20,7 @@ Usage
 **On Solr side**:
 
 - add the following (or corresponding, if you are using a diff version than ES2.0) jars from ES to solr\server\solr-webapp\webapp\WEB-INF\lib\:
-    - elasticsearch-2.0.0-beta1-SNAPSHOT.jar
+    - elasticsearch-2.0.0.jar
     - jackson-core-2.5.3.jar
     - jackson-dataformat-yaml-2.5.3.jar
     - jsr166e-1.1.0.jar
